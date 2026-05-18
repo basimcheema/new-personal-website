@@ -16,9 +16,8 @@ const { title = "Basim" } = Astro.props;
         <div class="site-links">
           <a href="/">home</a>
           <a href="/about/">about</a>
-          <a href="/projects/projects">projects</a>
           <a href="/experience/">experience</a>
-          <a href="/research-interests/">research-interests</a>
+          <a href="/projects/projects">projects</a>
           <a href="/photos/">photos</a>
         </div>
 
@@ -78,12 +77,31 @@ const { title = "Basim" } = Astro.props;
   :global(html[data-theme="light"]) {
     background: #dddcce;
     color: #303030;
-    
+
+    footer {
+    border-top: 1px solid #303030;
+    color: #303030;
+  }
+
+  header {
+    border-bottom: 1px solid #303030;
+  }
+
   }
 
   :global(html[data-theme="dark"]) {
     background: #282828;
     color: #e3e3e3;
+
+    footer {
+    border-top: 1px solid #e3e3e3;
+    color: #e3e3e3;
+  }
+
+  header {
+    border-bottom: 1px solid #e3e3e3;
+  }
+
   }
 
     .theme-toggle {
@@ -102,7 +120,7 @@ const { title = "Basim" } = Astro.props;
 
 
   body {
-    max-width: 1500px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 24px;
   }
@@ -132,16 +150,9 @@ const { title = "Basim" } = Astro.props;
     color: #0645ad;
   }
 
-  a:visited {
-    color: #551a8b;
-  }
 
   :global(html[data-theme="dark"]) a {
     color: #8ab4ff;
-  }
-
-  :global(html[data-theme="dark"]) a:visited {
-    color: #d7b5ff;
   }
 
   h1,
@@ -150,8 +161,6 @@ const { title = "Basim" } = Astro.props;
   }
 
   footer {
-    border-top: 1px solid #111;
-    color: #555;
     font-size: 0.9rem;
     margin-top: 48px;
     padding-top: 12px;
