@@ -1,5 +1,44 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+/*
+  To add a new project, copy this object into the projects array below:
+
+  {
+    title: "Project Title",
+    href: "/projects/project-title/",
+    date: "Month 2026 - Month 2026",
+    description: "One-line description of what the project does or why it matters.",
+    image: "/pics/example-image.jpg",
+  },
+
+  Put project images in public/pics/.
+  Use image: "" if the project does not have an image yet.
+*/
+
+const projects = [
+  {
+    title: "Custom Vehicle Control Unit for FSAE EV",
+    href: "/projects/custom-vcu/",
+    date: "Jul. 2025 - Jun. 2026",
+    description: "STM32-based VCU for high-performance open-wheel racing",
+    image: "/pics/vcu_cover.png",
+  },
+  {
+    title: "Low-Cost Direct Ink Writing (DIW) 3D-Printer",
+    href: "/projects/low-cost-diw/",
+    date: "Feb. 2025 - Jun. 2025",
+    description: "3D printer for extruding soft materials and conductive pastes for I2BL.",
+    image: "/pics/diw_printer_cover.png",
+  },
+  {
+    title: "Refreshable Braille Display",
+    href: "/projects/refreshable-braille-display/",
+    date: "Sep. 2024 - May. 2025",
+    description: "Low-cost braille display using PCB electromagnets.",
+    image: "/pics/refreshable_braille_display_cover.jpg",
+  },
+];
 ---
 <BaseLayout title="Projects | Basim">
   <main>
@@ -7,5 +46,101 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <p>
       Below are some of the projects I've worked on over the years. Click on one to see more.
     </p>
+    <div class="project-list">
+      {projects.map((project) => (
+        <article class={`project ${project.image ? "has-image" : ""}`}>
+          {project.image && (
+            <a class="project-image-link" href={project.href} aria-label={project.title}>
+              <img src={project.image} alt="" />
+            </a>
+          )}
+          <div class="project-details">
+            <div class="project-heading">
+              <h3>
+                <a href={project.href}>{project.title}</a>
+              </h3>
+              <p>{project.date}</p>
+            </div>
+
+            <p>{project.description}</p>
+          </div>
+        </article>
+      ))}
+    </div>
   </main>
+
+  <style>
+    .project-list {
+      display: grid;
+      gap: max(3.2%, 24px);
+      margin-top: max(3.2%, 24px);
+    }
+
+    .project {
+      display: grid;
+      gap: max(1.6%, 14px);
+    }
+
+    .project.has-image {
+      grid-template-columns: minmax(120px, 24%) 1fr;
+      align-items: start;
+    }
+
+    .project-image-link {
+      display: block;
+    }
+
+    .project-image-link img {
+      aspect-ratio: 4 / 3;
+      display: block;
+      height: auto;
+      object-fit: cover;
+      width: 100%;
+      border: 2px solid #303030;
+      padding: 2px;
+    }
+
+    .project-details {
+      min-width: 0;
+    }
+
+    .project-heading {
+      align-items: baseline;
+      display: flex;
+      gap: max(2%, 16px);
+      justify-content: space-between;
+    }
+
+    .project-heading h2,
+    .project-heading p,
+    .project-details > p {
+      margin: 0;
+    }
+
+    .project-heading p {
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    .project-details > p {
+      margin-top: max(0.8%, 6px);
+    }
+
+    @media (max-width: 650px) {
+      .project.has-image {
+        grid-template-columns: 1fr;
+      }
+
+      .project-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .project-heading p {
+        white-space: normal;
+      }
+      
+    }
+  </style>
 </BaseLayout>

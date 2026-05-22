@@ -43,11 +43,11 @@ const { title = "Basim" } = Astro.props;
     const themeIcon = document.querySelector("#theme-icon");
     const savedTheme = localStorage.getItem("theme");
 
-    function setTheme(theme) {
+    function setTheme(theme: "dark" | "light") {
         document.documentElement.dataset.theme = theme;
         localStorage.setItem("theme", theme);
 
-        if (themeIcon) {
+        if (themeIcon instanceof HTMLImageElement) {
         themeIcon.src = theme === "dark" ? "/icons/sun.svg" : "/icons/moon.svg";
         }
 
@@ -92,6 +92,11 @@ const { title = "Basim" } = Astro.props;
     background: #dddcce;
     color: #303030;
 
+    a {
+      color: #303030;
+      font-style: underline;
+    }
+
     footer {
     border-top: 1px solid #303030;
     color: #303030;
@@ -106,6 +111,9 @@ const { title = "Basim" } = Astro.props;
   :global(html[data-theme="dark"]) {
     background: #282828;
     color: #e3e3e3;
+    a {
+      color: #e3e3e3;
+    }
 
     footer {
     border-top: 1px solid #e3e3e3;
@@ -160,13 +168,18 @@ const { title = "Basim" } = Astro.props;
     gap: var(--space-xs) var(--space-md);
   }
 
-  a {
-    color: #0645ad;
+  :global(html[data-theme="light"])  
+  {
+    .profile-links a, .site-links a {
+      color: #0645ad;
+    }
   }
 
-
-  :global(html[data-theme="dark"]) a {
+  :global(html[data-theme="dark"]){
+  
+  .site-links a, .profile-links a {
     color: #8ab4ff;
+  }
   }
 
   h1,
