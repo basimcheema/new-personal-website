@@ -6,50 +6,93 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout title="Experience | Basim">
   <main>
     <h1>Experience</h1>
-    
+    <h2>Tenstorrent</h2>
+    <section class="experience-role">
+      <div class="experience-heading">
+        <h4>Scaleout Software Engineering Intern</h4>
+        <h4>Jun. 2026 - Present</h4> 
+      </div>
     <h2>Bruin Formula Racing</h2>
-    <div class="experience-heading">
+    <section class="experience-role">
+      <div class="experience-heading">
+        <h4>Low Voltage Lead</h4>
+        <h4>May. 2026 - Present</h4> 
+      </div>
+      <div class="experience-heading">
         <h4>Vehicle Control Unit (VCU) Responsible Engineer</h4>
         <h4>Jun. 2025 - Present</h4> 
-    </div>
-    <div class="experience-heading">
+      </div>
+    <section class="experience-role">
+      <div class="experience-heading">
         <h4>Electrical Engineering General Member (High & Low Voltage)</h4>
         <h4>Oct. 2024 - Jun. 2025</h4> 
-    </div>
-
+      </div>
+    </section>
 
     <h2>Tenstorrent</h2>
-    <div class="experience-heading">
+    <section class="experience-role">
+      <div class="experience-heading">
         <h4>Scaleout Software Engineering Intern</h4>
         <h4>Jun. 2025 - Sep. 2025</h4> 
-    </div>
+      </div>
+    </section>
 
     <h2>Interconnected & Integrated Bioelectronics Laboratory</h2>
-    <div class="experience-heading">
+    <section class="experience-role">
+      <div class="experience-heading">
         <h4>Undergraduate Research Assistant</h4>
         <h4>Dec. 2024 - Dec. 2025</h4> 
-    </div>
+      </div>
+    </section>
 
     <h2>Sage Hill Robotics</h2>
-    <div class="experience-heading">
+    <section class="experience-role">
+      <div class="experience-heading">
         <h4>Electrical Team Lead</h4>
         <h4>Sep. 2020 - Jun. 2024</h4> 
-    </div>
+      </div>
+    </section>
     
   </main>
 <style>
   h2 {
     margin-bottom: 0px;
   }
+
+.experience-role {
+  margin-bottom: max(2.4%, 18px);
+}
   
 .experience-heading {
   display: flex;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
+  gap: max(2%, 16px);
 }
 
 .experience-heading h4 {
+  font-style: italic;
+  font-weight: bold;
   margin-top: 0px;
   margin-bottom: 5px;
+}
+
+.experience-role ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: max(3.2%, 22px);
+}
+
+.experience-role li {
+  margin-bottom: max(0.5%, 4px);
+}
+
+@media (max-width: 600px) {
+  .experience-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+  }
+}
 </style>
 </BaseLayout>
