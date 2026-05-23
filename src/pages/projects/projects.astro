@@ -19,21 +19,21 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 const projects = [
   {
     title: "Custom Vehicle Control Unit for FSAE EV",
-    href: "/projects/custom-vcu/",
+    href: "${import.meta.env.BASE_URL}projects/custom-vcu/",
     date: "Jul. 2025 - Jun. 2026",
     description: "STM32-based VCU for high-performance open-wheel racing",
     image: "/pics/vcu_cover.png",
   },
   {
     title: "Low-Cost Direct Ink Writing (DIW) 3D-Printer",
-    href: "/projects/low-cost-diw/",
+    href: "${import.meta.env.BASE_URL}projects/low-cost-diw/",
     date: "Feb. 2025 - Jun. 2025",
     description: "3D printer for extruding soft materials and conductive pastes for I2BL.",
     image: "/pics/diw_printer_cover.png",
   },
   {
     title: "Refreshable Braille Display",
-    href: "/projects/refreshable-braille-display/",
+    href: "${import.meta.env.BASE_URL}projects/refreshable-braille-display/",
     date: "Sep. 2024 - May. 2025",
     description: "Low-cost braille display using PCB electromagnets.",
     image: "/pics/refreshable_braille_display_cover.jpg",

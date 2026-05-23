@@ -14,11 +14,11 @@ const { title = "Basim" } = Astro.props;
     <header>
       <nav aria-label="Main navigation">
         <div class="site-links">
-          <a href="/">home</a>
-          <a href="/about/">about</a>
-          <a href="/experience/">experience</a>
-          <a href="/projects/projects">projects</a>
-          <a href="/photos/">photos</a>
+          <a href="${import.meta.env.BASE_URL}">home</a>
+          <a href="${import.meta.env.BASE_URL}about/">about</a>
+          <a href="${import.meta.env.BASE_URL}experience/">experience</a>
+          <a href="${import.meta.env.BASE_URL}projects/projects">projects</a>
+          <a href="${import.meta.env.BASE_URL}photos/">photos</a>
         </div>
 
         <div class="profile-links">
