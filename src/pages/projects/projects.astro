@@ -1,15 +1,16 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+const base = import.meta.env.BASE_URL;
 
 /*
   To add a new project, copy this object into the projects array below:
 
   {
     title: "Project Title",
-    href: "/projects/project-title/",
+    href: `${base}projects/project-title/`,
     date: "Month 2026 - Month 2026",
     description: "One-line description of what the project does or why it matters.",
-    image: "/pics/example-image.jpg",
+    image: `${base}pics/example-image.jpg`,
   },
 
   Put project images in public/pics/.
@@ -19,24 +20,24 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 const projects = [
   {
     title: "Custom Vehicle Control Unit for FSAE EV",
-    href: "${import.meta.env.BASE_URL}projects/custom-vcu/",
+    href: `${base}projects/custom-vcu/`,
     date: "Jul. 2025 - Jun. 2026",
     description: "STM32-based VCU for high-performance open-wheel racing",
-    image: "/pics/vcu_cover.png",
+    image: `${base}pics/vcu_cover.png`,
   },
   {
     title: "Low-Cost Direct Ink Writing (DIW) 3D-Printer",
-    href: "${import.meta.env.BASE_URL}projects/low-cost-diw/",
+    href: `${base}projects/low-cost-diw/`,
     date: "Feb. 2025 - Jun. 2025",
     description: "3D printer for extruding soft materials and conductive pastes for I2BL.",
-    image: "/pics/diw_printer_cover.png",
+    image: `${base}pics/diw_printer_cover.png`,
   },
   {
     title: "Refreshable Braille Display",
-    href: "${import.meta.env.BASE_URL}projects/refreshable-braille-display/",
+    href: `${base}projects/refreshable-braille-display/`,
     date: "Sep. 2024 - May. 2025",
     description: "Low-cost braille display using PCB electromagnets.",
-    image: "/pics/refreshable_braille_display_cover.jpg",
+    image: `${base}pics/refreshable_braille_display_cover.jpg`,
   },
 ];
 ---
