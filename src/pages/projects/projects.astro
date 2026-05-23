@@ -98,8 +98,17 @@ const projects = [
       height: auto;
       object-fit: cover;
       width: 100%;
-      border: 2px solid #303030;
       padding: 2px;
+    }
+
+    :global(html[data-theme="light"]) 
+    .project-image-link img {
+      border: 2px solid #303030;
+    }
+
+    :global(html[data-theme="dark"])
+    .project-image-link img {
+      border: 2px solid #e3e3e3;
     }
 
     .project-details {
